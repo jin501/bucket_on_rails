@@ -9,7 +9,6 @@ class BucketsController < ApplicationController
   def index
     @user = User.friendly.find(params[:id])
     @buckets = @user.bukets
-
   end
 
   #'/buckets/:id/new'
@@ -17,6 +16,7 @@ class BucketsController < ApplicationController
     @user = User.friendly.find(params[:id])
     if current_user == @user
       @bucket = Buket.new
+      @bucket.goals.build
     else
       redirect_to buckets_path
     end
@@ -37,11 +37,10 @@ class BucketsController < ApplicationController
     end
   end
 
-
   private
 
   def bucket_params
-    params.require(:buket).permit(:title, :caption, :user_id)
+    params.require(:buket).permit(:title, :caption, :user_id, goals_attributes: [:title], hashtags_attributes: [:hashtag])
   end
 
 

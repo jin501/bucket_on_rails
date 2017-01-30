@@ -5,5 +5,6 @@ class Buket < ActiveRecord::Base
   has_many :hashtags, through: :bucket_hashtags
   has_many :goals
 
+  accepts_nested_attributes_for :goals, :hashtags
 
 end
