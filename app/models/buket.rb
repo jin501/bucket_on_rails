@@ -1,4 +1,4 @@
-class Bucket < ActiveRecord::Base
+class Buket < ActiveRecord::Base
 
   belongs_to :user
   has_many :bucket_hashtags

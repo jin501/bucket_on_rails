@@ -1,5 +1,4 @@
 <% if current_user %>
-<% binding.pry %>
   <%= current_user.username %>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete)%>
 <% else %>

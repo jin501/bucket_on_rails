@@ -14,5 +14,9 @@ class User < ApplicationRecord
 
   has_many :following, through: :active_relationships, source: :followed
 
+  has_many :bukets
+  has_many :hastags, through: :bukets
+  has_many :goals
+  has_many :comments
 
 end

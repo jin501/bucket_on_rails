@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130035355) do
+ActiveRecord::Schema.define(version: 20170130050153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bucket_hashtags", force: :cascade do |t|
-    t.integer "bucket_id"
+    t.integer "buket_id"
     t.integer "hastag_id"
   end
 
-  create_table "buckets", force: :cascade do |t|
+  create_table "bukets", force: :cascade do |t|
     t.string  "title"
     t.string  "caption"
     t.integer "user_id"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20170130035355) do
     t.string  "title"
     t.string  "caption"
     t.boolean "completed"
-    t.integer "bucket_id"
+    t.integer "buket_id"
     t.integer "user_id"
     t.string  "picture"
     t.string  "slug"

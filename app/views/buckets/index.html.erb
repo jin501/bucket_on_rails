@@ -1,0 +1,19 @@
+<div>
+
+  --- User Profile here ---
+<div>
+  # Following # Followers
+  <div>
+    Bio
+  </div>
+</div>
+
+----All Buckets of User---
+<% @buckets.each do |bucket| %>
+  <ul>
+    <%= bucket.title %>
+    <%= bucket.caption %>
+  </ul>
+<% end %>
+
+</div>
