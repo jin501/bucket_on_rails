@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  extend FriendlyId
+  friendly_id :username, use: :slugged
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -8,13 +11,8 @@ class User < ApplicationRecord
 
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
-  
-  def slug
-    username.downcase.gsub(" ", "-")
-  end
 
-  def self.find_by_slug(slug)
-    User.all.find {|u| u.slug == slug}
-  end
+  has_many :following, through: :active_relationships, source: :followed
+
 
 end
