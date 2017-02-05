@@ -1,40 +1,45 @@
 class BucketsController < ApplicationController
 
   #'/buckets'
+  # index of all the buckets across users
   def all
     @buckets = Buket.all
   end
 
-  #'/buckets/:id'
+  #'/buckets/:username'
+  # index of buckets for a specific user
   def index
-    @user = User.friendly.find(params[:id])
+    @user = User.friendly.find(params[:username])
     @buckets = @user.bukets
   end
 
-  #'/buckets/:id/new'
+  #'/buckets/:username/new'
+  # create a new bucket
   def new
-    @user = User.friendly.find(params[:id])
+    @user = User.friendly.find(params[:username])
     if current_user == @user
       @bucket = Buket.new
       @bucket.goals.build
     else
-      redirect_to buckets_path
+      redirect_to buckets_index_path
     end
-  end
-
-  #'/buckets/:id/:id'
-  def show
-
   end
 
   # post '/buckets/:id/new'
   def create
     @bucket = Buket.new(bucket_params)
     if @bucket.save
-      redirect_to bucket_index_path(current_user)
+      redirect_to bucket_show_path(current_user, @bucket.id)
     else
       redirect_to new_bucket_path
     end
+  end
+
+  #'/buckets/:username/:id'
+  # show a specific bucket of a user / goals index
+  def show
+    @user = User.friendly.find(params[:username])
+    @bucket = Bucket.find(params[:bucket_id])
   end
 
   private

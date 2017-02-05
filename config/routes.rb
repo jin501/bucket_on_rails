@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
 
   get '/buckets', to: 'buckets#all', as: 'bukets'
-  get '/buckets/:id', to: 'buckets#index', as: 'bucket_index'
-  get '/buckets/:id/new', to: 'buckets#new', as: 'new_bucket'
+  get '/buckets/:username', to: 'buckets#index', as: 'bucket_index'
+  get '/buckets/:username/new', to: 'buckets#new', as: 'new_bucket'
   post '/buckets', to: 'buckets#create'
-  get '/buckets/:id/:id', to: 'buckets#show', as: 'bucket_show_path'
-  # get '/buckets/:username/:id/:goal', to: 'elements#index'
-
+  get '/buckets/:username/:bucket_id', to: 'buckets#show', as: 'bucket_show'
+  get '/buckets/:username/:bucket_id/:goal', to: 'goals#show', as: 'goals_show'
+  # get '/buckets/:username/:bucket_id/:goal/edit'
 
 end

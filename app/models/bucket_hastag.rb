@@ -1,6 +1,6 @@
 class BucketHashtag < ActiveRecord::Base
 
-  belongs_to :bucket
+  belongs_to :buket
   belongs_to :hashtag
 
 
