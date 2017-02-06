@@ -1,9 +1,127 @@
-<div>
+<div class="container">
+  <div class="ui three stackable link cards">
 
-<% @buckets.each do |bucket| %>
-  <%= bucket.title %>
-  <%= bucket.caption %>
-  <%= bucket.user.username %>
-<% end %>
+  <% @buckets.each do |bucket| %>
+    <a class="ui card" href="/buckets/<%= bucket.user.username %>/<%= bucket.id %>">
+      <div class="image">
+        <img src="/bucket.png">
+      </div>
+      <div class="content">
+        <div class="header">
+          <%= bucket.title %>
+        </div>
+        <div class="description">
+          <%= bucket.caption %>
+        </div>
+        <div class="meta">
+          <span class="category">Posted 2 days ago</span>
+        </div>
+      </div>
+      <div class="extra content">
+        75 items, 15 completed
+      </div>
+    </a>
+  <% end %>
 
+    <a class="ui card" href="/buckets">
+      <div class="image">
+        <img src="/bucket.png">
+      </div>
+      <div class="content">
+        <div class="header">
+          bucket title
+        </div>
+        <div class="description">
+          caption of bucket here
+        </div>
+        <div class="meta">
+          <span class="category">Posted 2 days ago</span>
+        </div>
+      </div>
+      <div class="extra content">
+        75 items, 15 completed
+      </div>
+    </a>
+
+    <a class="ui card" href="/buckets">
+      <div class="image">
+        <img src="/bucket.png">
+      </div>
+      <div class="content">
+        <div class="header">
+          bucket title
+        </div>
+        <div class="description">
+          caption of bucket here
+        </div>
+        <div class="meta">
+          <span class="category">Posted 2 days ago</span>
+        </div>
+      </div>
+      <div class="extra content">
+        75 items, 15 completed
+      </div>
+    </a>
+
+    <a class="ui card" href="/buckets">
+      <div class="image">
+        <img src="/bucket.png">
+      </div>
+      <div class="content">
+        <div class="header">
+          bucket title
+        </div>
+        <div class="description">
+          caption of bucket here
+        </div>
+        <div class="meta">
+          <span class="category">Posted 2 days ago</span>
+        </div>
+      </div>
+      <div class="extra content">
+        75 items, 15 completed
+      </div>
+    </a>
+
+    <a class="ui card" href="/buckets">
+      <div class="image">
+        <img src="/bucket.png">
+      </div>
+      <div class="content">
+        <div class="header">
+          bucket title
+        </div>
+        <div class="description">
+          caption of bucket here
+        </div>
+        <div class="meta">
+          <span class="category">Posted 2 days ago</span>
+        </div>
+      </div>
+      <div class="extra content">
+        75 items, 15 completed
+      </div>
+    </a>
+
+    <a class="ui card" href="/buckets">
+      <div class="image">
+        <img src="/bucket.png">
+      </div>
+      <div class="content">
+        <div class="header">
+          bucket title
+        </div>
+        <div class="description">
+          caption of bucket here
+        </div>
+        <div class="meta">
+          <span class="category">Posted 2 days ago</span>
+        </div>
+      </div>
+      <div class="extra content">
+        75 items, 15 completed
+      </div>
+    </a>
+
+  </div>
 </div>
