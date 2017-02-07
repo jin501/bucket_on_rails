@@ -1,12 +1,43 @@
 show the goals index of specfic bucket
 
+<div class="ui vertical masthead center aligned segment">
+  <div class='content'>
+    <img class="ui small circular image" src="<%= @user.avatar %>">
+    <h1 class="header">
+      <%= @user.username %>
+      <% if @user == current_user %>
+      <div class="ui dropdown item" id="hybrid">
+        <i class="grey ellipsis horizontal icon"></i>
+        <select>
+          <option id="add-new-bucket">create bucket</option>
+          <option>edit profile</option>
+          <option>Blue</option>
+          <option>Green</option>
+        </select>
+      </div>
+      <% else%>
+      <a class="ui green button">Follow</a>
+      <% end %>
+    </h1>
+  </div>
+
+  <p>
+    <%= @user.bukets.count %> buckets | 229 followers | 100 following
+  </p>
+  <h3><%= @user.bio %></h3>
+  <button class="ui button">edit bio</button>
+  <button id="add-new-bucket" class="ui button">Create bucket</button>
+</div>
+
+
 <div class="ui card">
+  <% @bucket.goals.each do |goal| %>
   <div class="content">
     <div class="right floated meta">14h</div>
-    <img class="ui avatar image" src="/images/avatar/large/elliot.jpg"> Elliot
+    <img class="ui avatar image" src="<%= @user.avatar %>"> <%= @user.username %>
   </div>
   <div class="image">
-    <img>
+    <img src="/pic.jpg">
   </div>
   <div class="content">
     <span class="right floated">
@@ -22,4 +53,5 @@ show the goals index of specfic bucket
       <input type="text" placeholder="Add Comment...">
     </div>
   </div>
+  <% end %>
 </div>

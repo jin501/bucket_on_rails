@@ -1,32 +1,8 @@
-<div>
-
-  --- User Profile here ---
-<div>
-  # Following # Followers
-  <div>
-    Bio
-  </div>
-  #button to edit profile
-  #add new buket
-</div>
-
-----All Buckets of User---
-<% @buckets.each do |bucket| %>
-  <ul>
-    <%= bucket.title %>
-    <%= bucket.caption %>
-
-  </ul>
-<% end %>
-
-</div>
-
 <div class="ui vertical masthead center aligned segment">
   <div class='content'>
-    <img class="ui small circular image" src="<%= @user.avatar %>">
     <h1 class="header">
+      <img class="ui small circular centered image" src="<%= @user.avatar %>">
       <%= @user.username %>
-
       <% if @user == current_user %>
       <div class="ui dropdown item" id="hybrid">
         <i class="grey ellipsis horizontal icon"></i>

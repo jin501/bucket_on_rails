@@ -8,7 +8,11 @@ $.when(
 $(document).ready(function(){
 
   $('#hybrid select')
-  .dropdown({
+    .dropdown({
+      on: 'hover'
+  });
+
+  $('.special.cards .image').dimmer({
     on: 'hover'
   });
 
