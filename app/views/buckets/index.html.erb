@@ -7,10 +7,9 @@
       <div class="ui dropdown item" id="hybrid">
         <i class="grey ellipsis horizontal icon"></i>
         <select>
-          <option id="add-new-bucket">create bucket</option>
+          <option href="www.google.com" id="add-new-bucket">create bucket</option>
           <option>edit profile</option>
-          <option>Blue</option>
-          <option>Green</option>
+          <option id="sign-out">sign out</option>
         </select>
       </div>
       <% else%>
@@ -29,13 +28,15 @@
 <% if @buckets == [] %>
   No buckets yet!
 <% else %>
+<div class="container">
 <div class="ui link cards">
-  <div class="card">
+  <div class="ui three stackable link cards">
+  <% @buckets.each do |bucket| %>
+  <a class="card" href="/buckets/<%= @user.username %>/<%= bucket.id %>">
     <div class="image">
       <img src="/bucket.png">
     </div>
     <div class="content">
-      <% @buckets.each do |bucket| %>
       <div class="header">
         <%= bucket.title %>
       </div>
@@ -49,7 +50,10 @@
     <div class="extra content">
       75 items, 15 completed
     </div>
-  </div>
+  </a>
   <% end %>
 </div>
+</div>
+</div>
+
 <% end %>

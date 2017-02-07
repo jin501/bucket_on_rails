@@ -9,6 +9,7 @@ show the goals index of specfic bucket
       <div class="ui dropdown item" id="hybrid">
         <i class="grey ellipsis horizontal icon"></i>
         <select>
+          <option>::</option>
           <option id="add-new-bucket">create bucket</option>
           <option>edit profile</option>
           <option>Blue</option>
@@ -27,6 +28,10 @@ show the goals index of specfic bucket
   <h3><%= @user.bio %></h3>
   <button class="ui button">edit bio</button>
   <button id="add-new-bucket" class="ui button">Create bucket</button>
+<h1 class="header">
+  "<%= @bucket.title %>"
+</h1>
+<h4><%= @bucket.caption %></h4>
 </div>
 
 
