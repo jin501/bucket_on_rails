@@ -1,0 +1,12 @@
+#body{
+  background-color: #f2f2ea;
+  margin-top: -39px;
+  /*margin-bottom: 39px;*/
+}
+#main{
+  margin: 40px;
+}
+
+.ui.three.stackable.link.cards{
+  margin: 40px;
+}

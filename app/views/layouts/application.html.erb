@@ -6,32 +6,22 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.6/semantic.min.js"></script>
-    <script type="text/javascript" src="#"></script>
-    <link rel="stylesheet" href="#">
-
-
   </head>
   <body>
       <div class="pusher">
-      <div class="ui segment">
-        <div class="ui secondary menu">
-          <a class="item" href='/'>
-            <img src='http://www.wyklejanietablic.pl/cc/icon_2142.png' />   <i class="ui vertical divider"></i> Bucket
-          </a>
-
-        <div class="right ui category search item">
-          <div class="ui transparent icon input">
-            <input class="prompt" type="text" placeholder="Search...">
-            <i class="search link icon"></i>
-          </div>
-          <div class="results"></div>
-        </div>
+        <div class="ui segment">
+          <div class="ui secondary menu">
+            <a class="item" href='/'>
+              <img src='http://www.wyklejanietablic.pl/cc/icon_2142.png' />   <i class="ui vertical divider"></i> Bucket
+            </a>
+            <div class="right ui category search item">
+              <div class="ui transparent icon input">
+                <input class="prompt" type="text" placeholder="Search...">
+                  <i class="search link icon"></i>
+              </div>
+            <div class="results"></div>
+            </div>
 
         <a class="item" href='/explore'>
           <img src='/explore.png' />
@@ -45,10 +35,11 @@
         </a>
         </div>
       </div>
-
+      <div id='body'>
       <div id='main'>
         <%= render 'layouts/navbar' %>
         <%= yield %>
+      </div>
       </div>
     </div>
     </body>

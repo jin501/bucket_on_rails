@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130050153) do
+ActiveRecord::Schema.define(version: 20170207053116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,25 +21,29 @@ ActiveRecord::Schema.define(version: 20170130050153) do
   end
 
   create_table "bukets", force: :cascade do |t|
-    t.string  "title"
-    t.string  "caption"
-    t.integer "user_id"
+    t.string   "title"
+    t.string   "caption"
+    t.integer  "user_id"
+    t.datetime "created_at"
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string  "comment"
-    t.integer "user_id"
-    t.integer "element_id"
+    t.string   "comment"
+    t.integer  "user_id"
+    t.integer  "element_id"
+    t.datetime "created_at"
   end
 
   create_table "goals", force: :cascade do |t|
-    t.string  "title"
-    t.string  "caption"
-    t.boolean "completed"
-    t.integer "buket_id"
-    t.integer "user_id"
-    t.string  "picture"
-    t.string  "slug"
+    t.string   "title"
+    t.string   "caption"
+    t.boolean  "completed"
+    t.integer  "buket_id"
+    t.integer  "user_id"
+    t.string   "picture"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "completed_at"
     t.index ["slug"], name: "index_goals_on_slug", unique: true, using: :btree
   end
 
