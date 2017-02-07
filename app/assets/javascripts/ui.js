@@ -7,6 +7,12 @@ $.when(
 ).done(()=>{
 $(document).ready(function(){
 
+  $('#hybrid select')
+  .dropdown({
+    on: 'hover'
+  });
+
+
 
   })
 })

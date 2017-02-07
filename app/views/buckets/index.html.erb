@@ -20,3 +20,33 @@
 <% end %>
 
 </div>
+
+<div class="ui vertical masthead center aligned segment">
+  <div class='content'>
+    <img class="ui small circular image" src="<%= @user.avatar %>">
+    <h1 class="header">
+      <%= @user.username %>
+
+      <% if @user == current_user %>
+      <div class="ui dropdown item" id="hybrid">
+        <i class="grey ellipsis horizontal icon"></i>
+        <select>
+          <option id="add-new-bucket">create bucket</option>
+          <option>edit profile</option>
+          <option>Blue</option>
+          <option>Green</option>
+        </select>
+      </div>
+      <% else%>
+      <a class="ui green button">Follow</a>
+      <% end %>
+    </h1>
+  </div>
+
+  <p>
+    <%= @user.bukets.count %> buckets | 229 followers | 100 following
+  </p>
+  <h3><%= @user.bio %></h3>
+  <button class="ui button">edit bio</button>
+  <button id="add-new-bucket" class="ui button">Create bucket</button>
+</div>

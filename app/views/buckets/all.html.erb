@@ -1,5 +1,36 @@
 <div class="container">
   <div class="ui three stackable link cards">
+  <% @buckets.each do |bucket| %>
+  <a class="ui card" href="/buckets/<%= bucket.user.username %>/<%= bucket.id %>">
+    <div class="content">
+      <div class="right floated meta">14h</div>
+      <img class="ui avatar image" src="<%= bucket.user.avatar %>">
+      <%= bucket.user.username %>
+    </div>
+    <div class="image">
+      <img src="/bucket.png">
+    </div>
+    <div class="content">
+      <div class="header">
+        <%= bucket.title %>
+      </div>
+      <div class="description">
+        <%= bucket.caption %>
+      </div>
+      <div class="meta">
+        <span class="category">Posted 2 days ago</span>
+      </div>
+    </div>
+    <div class="extra content">
+      75 items, 15 completed
+    </div>
+  </a>
+  <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="ui three stackable link cards">
 
   <% @buckets.each do |bucket| %>
     <a class="ui card" href="/buckets/<%= bucket.user.username %>/<%= bucket.id %>">
