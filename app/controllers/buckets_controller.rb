@@ -38,7 +38,6 @@ class BucketsController < ApplicationController
   #'/buckets/:username/:id'
   # show a specific bucket of a user / goals index
   def show
-    binding.pry
     @user = User.friendly.find(params[:username])
     @bucket = Bucket.find(params[:bucket_id])
   end
