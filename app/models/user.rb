@@ -28,10 +28,11 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]
       if auth.info.nickname
         user.username = auth.info.nickname
+        user.email = user.username
       else
         user.username = auth.info.email[/[^@]+/]
+        user.email = auth.info.email
       end
-      user.email = user.username
     end
   end
 
