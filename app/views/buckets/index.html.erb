@@ -18,7 +18,6 @@
       <% end %>
     </h1>
   </div>
-
   <p>
     <%= @user.bukets.count %> buckets | 229 followers | 100 following
   </p>
@@ -26,3 +25,31 @@
   <button class="ui button">edit bio</button>
   <button id="add-new-bucket" class="ui button">Create bucket</button>
 </div>
+
+<% if @buckets == [] %>
+  No buckets yet!
+<% else %>
+<div class="ui link cards">
+  <div class="card">
+    <div class="image">
+      <img src="/bucket.png">
+    </div>
+    <div class="content">
+      <% @buckets.each do |bucket| %>
+      <div class="header">
+        <%= bucket.title %>
+      </div>
+      <div class="description">
+        <%= bucket.caption %>
+      </div>
+      <div class="meta">
+        <span class="category">Posted 2 days ago</span>
+      </div>
+    </div>
+    <div class="extra content">
+      75 items, 15 completed
+    </div>
+  </div>
+  <% end %>
+</div>
+<% end %>

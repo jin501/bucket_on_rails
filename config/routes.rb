@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root to: 'buckets#all'
 
-  get '/buckets', to: 'buckets#all', as: 'buckets'
+  get '/buckets', to: 'buckets#all', as: 'buket'
   get '/buckets/:username', to: 'buckets#index', as: 'bucket_index'
   get '/buckets/:username/new', to: 'buckets#new', as: 'new_bucket'
   post '/buckets', to: 'buckets#create'

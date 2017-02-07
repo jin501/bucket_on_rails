@@ -2,7 +2,7 @@ show the goals index of specfic bucket
 
 <div class="ui vertical masthead center aligned segment">
   <div class='content'>
-    <img class="ui small circular image" src="<%= @user.avatar %>">
+    <img class="ui small circular centered image" src="<%= @user.avatar %>">
     <h1 class="header">
       <%= @user.username %>
       <% if @user == current_user %>
@@ -40,6 +40,11 @@ show the goals index of specfic bucket
     <img src="/pic.jpg">
   </div>
   <div class="content">
+    <div class="content">
+      <strong><%= @user.username %></strong> <%= goal.title %>
+      <%= goal.caption %>
+    </div>
+
     <span class="right floated">
       <i class="heart outline like icon"></i>
       17 likes

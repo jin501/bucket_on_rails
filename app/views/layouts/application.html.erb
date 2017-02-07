@@ -23,6 +23,10 @@
             <div class="results"></div>
             </div>
 
+        <a class="item" id="add-new-bucket">
+          <img src='/add.png' />
+        </a>
+
         <a class="item" href='/explore'>
           <img src='/explore.png' />
         </a>
@@ -38,6 +42,7 @@
       <div id='body'>
       <div id='main'>
         <%= render 'layouts/navbar' %>
+        <%= render 'layouts/create' %>
         <%= yield %>
       </div>
       </div>

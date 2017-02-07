@@ -11,11 +11,15 @@ class BucketsController < ApplicationController
   def index
     @user = User.friendly.find(params[:username])
     @buckets = @user.bukets
+
+    @bucket = Buket.new
+    @bucket.goals.build
   end
 
   #'/buckets/:username/new'
   # create a new bucket
   def new
+
     @user = User.friendly.find(params[:username])
     if current_user == @user
       @bucket = Buket.new
@@ -27,6 +31,7 @@ class BucketsController < ApplicationController
 
   # post '/buckets/:id/new'
   def create
+    # binding.pry
     @bucket = Buket.new(bucket_params)
     if @bucket.save
       redirect_to bucket_show_path(current_user, @bucket.id)
