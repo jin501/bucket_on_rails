@@ -4,14 +4,19 @@
       <img class="ui small circular centered image" src="<%= @user.avatar %>">
       <%= @user.username %>
       <% if @user == current_user %>
+      <%= render 'create' %>
+      <%= render 'edit_profile' %>
+
       <div class="ui dropdown item" id="hybrid">
         <i class="grey ellipsis horizontal icon"></i>
-        <select>
-          <option href="www.google.com" id="add-new-bucket">create bucket</option>
-          <option>edit profile</option>
+        <select id="myselect">
+          <option></option>
+          <option id="add-new-bucket">create bucket</option>
+          <option href='/'>edit profile</option>
           <option id="sign-out">sign out</option>
         </select>
       </div>
+
       <% else%>
       <a class="ui green button">Follow</a>
       <% end %>
@@ -22,7 +27,7 @@
   </p>
   <h3><%= @user.bio %></h3>
   <button class="ui button">edit bio</button>
-  <button id="add-new-bucket" class="ui button">Create bucket</button>
+  <button id="add-bucket" class="ui button">Create bucket</button>
 </div>
 
 <% if @buckets == [] %>

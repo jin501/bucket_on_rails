@@ -7,11 +7,13 @@ $.when(
 ).done(()=>{
 $(document).ready(function(){
 
+//menu dropdown
   $('#hybrid select')
     .dropdown({
       on: 'hover'
   });
 
+//follow on card hover
   $('.special.cards .image').dimmer({
     on: 'hover'
   });
