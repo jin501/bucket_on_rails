@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-
   layout :layout
+
   protect_from_forgery with: :exception
   before_action :authenticate_user!
   before_filter :configure_permitted_parameters, if: :devise_controller?
@@ -16,9 +16,9 @@ class ApplicationController < ActionController::Base
   private
   def layout
     # only turn it off for login pages:
-    is_a?(Devise::SessionsController) ? false : "application"
+    # is_a?(Devise::SessionsController) ? false : "application"
     # or turn layout off for every devise controller:
-    # devise_controller? && "application"
+    !devise_controller? && "application"
   end
 
 end

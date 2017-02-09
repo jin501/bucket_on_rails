@@ -1,7 +1,12 @@
 var documentready = function(){
 
+  $('#follow').on('click', (e)=> {
+    e.preventDefault();
+    
+  })
+
   $('#add-bucket').on('click', () => {
-    $('.ui.basic.modal').modal('show')
+    $('.ui.basic.modal').modal('show');
   })
 
   $('#myselect').on('change', () => {
