@@ -15,11 +15,14 @@
           <%= f.label :caption %>
           <%= f.text_field :caption %>
       </div>
-        <%= f.fields_for :goals, @bucket.goals.build do |g| %>
+        <%= f.fields_for @bucket.goals.build do |g| %>
         <div class="fields">
-          <%= render 'goals/field', :g => g %>
+          <%= render 'buckets/goal_fields', :g => g %>
         </div>
         <% end %>
+
+        <%= link_to_add_association 'add goal', f, :goals %>
+
 
       <button class='ui green left float button' id='add-button' data-url='/goals/new'>add</button>
 

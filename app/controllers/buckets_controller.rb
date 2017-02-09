@@ -1,5 +1,4 @@
 class BucketsController < ApplicationController
-  # include ApplicationHelper
 
   #'/buckets'
   # index of all the buckets across users
