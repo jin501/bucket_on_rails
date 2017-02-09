@@ -10,3 +10,8 @@
 .ui.three.stackable.link.cards{
   margin: 40px;
 }
+
+.bucket-image{
+  height: 200px !important;
+  width: 100px !important;
+}

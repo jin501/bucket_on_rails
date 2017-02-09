@@ -12,25 +12,26 @@
         <select id="myselect">
           <option></option>
           <option id="add-new-bucket">create bucket</option>
-          <option href='/'>edit profile</option>
+          <option>edit profile</option>
           <option id="sign-out">sign out</option>
         </select>
       </div>
+      <br />
+      <button class="ui button">edit bio</button>
+      <button id="add-bucket" class="ui button">Create bucket</button>
 
       <% else%>
       <a class="ui green button">Follow</a>
       <% end %>
     </h1>
   </div>
-  <p>
-    <%= @user.bukets.count %> buckets | 229 followers | 100 following
-  </p>
-  <h3><%= @user.bio %></h3>
-  <button class="ui button">edit bio</button>
-  <button id="add-bucket" class="ui button">Create bucket</button>
+  <h4>
+    <%= @user.bukets.count %> buckets | 100 accomplished | 229 followers | 100 following
+  </h4>
+  <p><%= @user.bio %></p>
 
   <h1 class="header">
-  "<%= @bucket.title %>"
+    "<%= @bucket.title %>"
   </h1>
   <h4><%= @bucket.caption %></h4>
 

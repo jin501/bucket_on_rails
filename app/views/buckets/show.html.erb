@@ -5,9 +5,9 @@ show the goals index of specfic bucket
   <div class="ui link cards">
     <div class="ui three stackable link cards">
       <% @bucket.goals.each do |goal| %>
-      <a class="ui card">
+      <a class="ui card" href='/buckets/<%= @user.slug %>/<%= @bucket.id %>/<%= goal.slug %>'>
         <div class="content">
-          <div class="right floated meta">14h</div>
+          <div class="right floated meta"><%= goal.posted_time %></div>
           <img class="ui avatar image" src="<%= @user.avatar %>"> <%= @user.username %>
         </div>
         <div class="image">

@@ -1,4 +1,4 @@
-$(function(){
+var documentready = function(){
 
   $('#add-bucket').on('click', () => {
     $('.ui.basic.modal').modal('show')
@@ -38,5 +38,6 @@ $(function(){
     event.preventDefault();
   })
 
+}
 
-})
+$(document).on('turbolinks:load',  documentready);
