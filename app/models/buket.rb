@@ -1,4 +1,6 @@
 class Buket < ActiveRecord::Base
+  include ActionView::Helpers::DateHelper
+
   validates_presence_of :title
   belongs_to :user
   has_many :buket_tags
@@ -12,6 +14,11 @@ class Buket < ActiveRecord::Base
         @bucket.save
       end
     end
+  end
+
+  def posted_time
+    time = time_ago_in_words(self.created_at)
+    time
   end
 
 end

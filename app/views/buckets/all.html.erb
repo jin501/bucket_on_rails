@@ -3,7 +3,7 @@
   <% @buckets.each do |bucket| %>
   <a class="ui card" href="/buckets/<%= bucket.user.username %>/<%= bucket.id %>">
     <div class="content">
-      <div class="right floated meta">14h</div>
+      <div class="right floated meta"><%= bucket.posted_time %></div>
       <img class="ui avatar image" src="<%= bucket.user.avatar %>">
       <%= bucket.user.username %>
     </div>
