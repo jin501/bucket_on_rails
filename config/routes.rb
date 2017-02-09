@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'buckets#all'
   get '/home', to: 'users#home'
   get '/buckets', to: 'buckets#all', as: 'bukets'
-  get '/buckets/:username', to: 'buckets#index', as: 'bucket_index'
+  get '/buckets/:username', to: 'buckets#index', as: 'buket'
   get '/buckets/:username/new', to: 'buckets#new', as: 'new_bucket'
   post '/buckets', to: 'buckets#create'
   get '/buckets/:username/:bucket_id', to: 'buckets#show', as: 'bucket_show'

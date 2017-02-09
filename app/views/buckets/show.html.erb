@@ -1,67 +1,39 @@
 show the goals index of specfic bucket
+<%= render 'buckets/profile_header' %>
 
-<div class="ui vertical masthead center aligned segment">
-  <div class='content'>
-    <img class="ui small circular centered image" src="<%= @user.avatar %>">
-    <h1 class="header">
-      <%= @user.username %>
-      <% if @user == current_user %>
-      <div class="ui dropdown item" id="hybrid">
-        <i class="grey ellipsis horizontal icon"></i>
-        <select>
-          <option>::</option>
-          <option id="add-new-bucket">create bucket</option>
-          <option>edit profile</option>
-          <option>Blue</option>
-          <option>Green</option>
-        </select>
-      </div>
-      <% else%>
-      <a class="ui green button">Follow</a>
+<div class="container">
+  <div class="ui link cards">
+    <div class="ui three stackable link cards">
+      <% @bucket.goals.each do |goal| %>
+      <a class="ui card">
+        <div class="content">
+          <div class="right floated meta">14h</div>
+          <img class="ui avatar image" src="<%= @user.avatar %>"> <%= @user.username %>
+        </div>
+        <div class="image">
+          <img src="/pic.jpg">
+        </div>
+        <div class="content">
+          <div class="content">
+            <strong><%= @user.username %></strong> <%= goal.title %>
+            <%= goal.caption %>
+          </div>
+
+          <span class="right floated">
+            <i class="heart outline like icon"></i>
+            17 likes
+          </span>
+          <i class="comment icon"></i>
+          3 comments
+        </div>
+        <div class="extra content">
+          <div class="ui large transparent left icon input">
+            <i class="heart outline icon"></i>
+            <input type="text" placeholder="Add Comment...">
+          </div>
+        </div>
+      </a>
       <% end %>
-    </h1>
-  </div>
-
-  <p>
-    <%= @user.bukets.count %> buckets | 229 followers | 100 following
-  </p>
-  <h3><%= @user.bio %></h3>
-  <button class="ui button">edit bio</button>
-  <button id="add-new-bucket" class="ui button">Create bucket</button>
-<h1 class="header">
-  "<%= @bucket.title %>"
-</h1>
-<h4><%= @bucket.caption %></h4>
-</div>
-
-
-<div class="ui card">
-  <% @bucket.goals.each do |goal| %>
-  <div class="content">
-    <div class="right floated meta">14h</div>
-    <img class="ui avatar image" src="<%= @user.avatar %>"> <%= @user.username %>
-  </div>
-  <div class="image">
-    <img src="/pic.jpg">
-  </div>
-  <div class="content">
-    <div class="content">
-      <strong><%= @user.username %></strong> <%= goal.title %>
-      <%= goal.caption %>
-    </div>
-
-    <span class="right floated">
-      <i class="heart outline like icon"></i>
-      17 likes
-    </span>
-    <i class="comment icon"></i>
-    3 comments
-  </div>
-  <div class="extra content">
-    <div class="ui large transparent left icon input">
-      <i class="heart outline icon"></i>
-      <input type="text" placeholder="Add Comment...">
     </div>
   </div>
-  <% end %>
 </div>
