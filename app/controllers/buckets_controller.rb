@@ -15,9 +15,10 @@ class BucketsController < ApplicationController
     @user = User.friendly.find(params[:username])
     @buckets = @user.bukets
 
+    # hidden modal create form
     @bucket = Buket.new
-    @bucket.goals.build
-    # binding.pry
+    4.times {@bucket.goals.build}
+
   end
 
   #'/buckets/:username/new'
@@ -37,15 +38,15 @@ class BucketsController < ApplicationController
 
   # post '/buckets/:id/new'
   def create
-    binding.pry
+    # binding.pry
     @bucket = Buket.new(bucket_params)
 
     if @bucket.save
-      # params[:hashtag].split(", ").each do |tag|
-        # @hashtag = Hashtag.find_or_create_by(hashtag: tag)
-        # @b_tag = Bucket_hashtag.create(bucket_id: @bucket.id, hashtag_id: @hashtag.id)
-        # binding.pry
-      # end
+      params[:hashtag].split(", ").each do |tag|
+        @tag = Tag.find_or_create_by(tag: tag)
+        @b_tag = BucketTag.create(buket_id: @bucket.id, tag_id: @tag.id)
+        binding.pry
+      end
       redirect_to bucket_show_path(current_user, @bucket.id)
     else
       redirect_to new_bucket_path

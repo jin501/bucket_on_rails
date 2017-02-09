@@ -9,6 +9,7 @@ class Buket < ActiveRecord::Base
 
   def goals_attributes(goals_attributes)
     attributes.values.each do |attr|
+      binding.pry
       @bucket = self.goals.build(attr)
       @bucket.save
     end

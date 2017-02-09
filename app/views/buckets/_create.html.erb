@@ -15,7 +15,7 @@
           <%= f.label :caption %>
           <%= f.text_field :caption %>
       </div>
-        <%= f.fields_for @bucket.goals.build do |g| %>
+        <%= f.fields_for :goals do |g| %>
         <div class="fields">
           <%= render 'buckets/goal_fields', :g => g %>
         </div>
@@ -24,12 +24,10 @@
         <%= link_to_add_association 'add goal', f, :goals %>
 
 
-      <button class='ui green left float button' id='add-button' data-url='/goals/new'>add</button>
+      <!-- <button class='ui green left float button' id='add-button' data-url='/goals/new'>add</button> -->
 
       <div class="fields">
-        <div class="field">
           <input name='[hashtag]' placeholder="enter tags separated by a comma.." />
-        </div>
       </div>
 
       <div class="actions">

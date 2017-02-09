@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170207053116) do
+ActiveRecord::Schema.define(version: 20170207053036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bucket_hashtags", force: :cascade do |t|
+  create_table "buket_tags", force: :cascade do |t|
     t.integer "buket_id"
-    t.integer "hastag_id"
+    t.integer "tag_id"
   end
 
   create_table "bukets", force: :cascade do |t|
@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(version: 20170207053116) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string   "comment"
+    t.string   "content"
     t.integer  "user_id"
-    t.integer  "element_id"
-    t.datetime "created_at"
+    t.integer  "goal_id"
+    t.datetime "created_at", null: false
   end
 
   create_table "goals", force: :cascade do |t|
@@ -47,10 +47,6 @@ ActiveRecord::Schema.define(version: 20170207053116) do
     t.index ["slug"], name: "index_goals_on_slug", unique: true, using: :btree
   end
 
-  create_table "hashtags", force: :cascade do |t|
-    t.string "hashtag"
-  end
-
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
@@ -59,6 +55,10 @@ ActiveRecord::Schema.define(version: 20170207053116) do
     t.index ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
     t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
     t.index ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "tag"
   end
 
   create_table "users", force: :cascade do |t|
