@@ -1,17 +1,16 @@
 class Buket < ActiveRecord::Base
 
   belongs_to :user
-  has_many :bucket_hashtags
-  has_many :hashtags, through: :bucket_hashtags
+  has_many :buket_tags
+  has_many :tags, through: :buket_tags
   has_many :goals
 
-  accepts_nested_attributes_for :goals
-
-  def goals_attributes(goals_attributes)
-    attributes.values.each do |attr|
-      binding.pry
-      @bucket = self.goals.build(attr)
-      @bucket.save
+  def goals_attributes=(attributes)
+    attributes.each do |attr|
+      if attr[:title] != ""
+        @bucket = self.goals.build(attr)
+        @bucket.save
+      end
     end
   end
 
