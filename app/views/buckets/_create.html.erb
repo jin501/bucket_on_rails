@@ -1,46 +1,37 @@
 <div class="ui basic modal">
-    <div class="ui icon header">
-      <i class="archive icon"></i>
-      Create a new Bucket
-    </div>
-    <div class="content">
-      <div class="ui form">
-        <div class="fields">
-      <%= form_for @bucket do |f| %>
-        <%= f.hidden_field :user_id, value: current_user.id %>
+  <div class="ui icon header">
+    <i class="archive icon"></i>
+    Create a new Bucket
+  </div>
+  <div class="content">
+    <div class="ui form">
+      <div class="fields">
+        <%= form_for @bucket do |f| %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
 
-        <%= f.label :title %>
-        <%= f.text_field :title %>
+          <%= f.label :title %>
+          <%= f.text_field :title %>
 
-        <%= f.label :caption %>
-        <%= f.text_field :caption %>
+          <%= f.label :caption %>
+          <%= f.text_field :caption %>
       </div>
-          <div class="fields">
-          <%= f.fields_for :goals do |g| %>
-          <div class="field">
-            <%= g.text_field :title, placeholder: "first goal"%>
-          </div>
-          <div class="field">
-            <%= g.text_field :title, placeholder: "first goal"%>
-          </div>
-          <div class="field">
-            <%= g.text_field :title, placeholder: "first goal"%>
-          </div>
-          <% end %>
+        <%= f.fields_for :goals, @bucket.goals.build do |g| %>
+        <div class="fields">
+          <%= render 'goals/field', :g => g %>
         </div>
+        <% end %>
 
-          <%= f.fields_for :hashtag do |g| %>
-          <%= g.label :hashtag %>
-          <div class="fields">
-          <div class="field">
-            <%= g.text_field :hashtag %>
-          </div>
-          <% end %>
+      <button class='ui green left float button' id='add-button' data-url='/goals/new'>add</button>
+
+      <div class="fields">
+        <div class="field">
+          <input name='[hashtag]' placeholder="enter tags separated by a comma.." />
         </div>
+      </div>
 
-        <div class="actions">
+      <div class="actions">
         <%= f.submit 'Create', class: "ui green right float ok inverted button" %>
-        </div>
+      </div>
       <% end %>
     </div>
   </div>

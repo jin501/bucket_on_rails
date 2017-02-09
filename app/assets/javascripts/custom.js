@@ -13,7 +13,6 @@ $(function(){
 
     }else if(select == 'create bucket'){
       //new modal pop up
-      alert('new')
       $('.ui.basic.modal').modal('show')
       $('#myselect').clear
     }else {
@@ -24,26 +23,22 @@ $(function(){
         select = ""
 
     }
+
   })
 
-  // $( "select" ).change(function() {
-  //   var str = "";
-  //   $( "select option:selected" ).each(function() {
-  //     str += $( this ).text() + " ";
-  //   });
-  //   if(str === 'sign out'){
-  //     console.log('hi')
-  //     // $('.ui.basic.modal').modal('show')
-  //   }
-  // // })
-  // .trigger( "change" );
+
+  //dynamically add fields for form
+  $('#add-button').click(function(event){
+    var $button = $(this)
+    var url = $(this).data('url')
+
+    $.get(url, function(response){
+      $button.before(response)
+    })
+    event.preventDefault();
+  })
 
 
-  // function changeFunc() {
-  //  var selectBox = document.getElementById("selectBox");
-  //  var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-  //  alert(selectedValue);
-  // }
 
 
 })

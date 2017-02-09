@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get '/buckets/:username/:bucket_id', to: 'buckets#show', as: 'bucket_show'
   get '/buckets/:username/:bucket_id/:goal', to: 'goals#show', as: 'goals_show'
 
-  # get '/users/:username/edit', to: 'users#edit' 
+  get '/goals/new', to: 'goals#new'
+  # get '/users/:username/edit', to: 'users#edit'
   get '/users/sign_out', to: 'devise/sessions#destroy'
   # get '/buckets/:username/:bucket_id/:goal/edit'
 
