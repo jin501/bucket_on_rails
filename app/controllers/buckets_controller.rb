@@ -3,7 +3,7 @@ class BucketsController < ApplicationController
   #'/buckets'
   # index of all the buckets across users
   def all
-    @buckets = Buket.all
+    @buckets = Buket.order('created_at DESC')
 
     # @bucket = Buket.new
     # @bucket.goals.build
@@ -53,7 +53,7 @@ class BucketsController < ApplicationController
   def show
     @user = User.friendly.find(params[:username].downcase)
     @bucket = Buket.find(params[:bucket_id])
-
+    # @bucket.goals.order('created_at DESC')
   end
 
   private
