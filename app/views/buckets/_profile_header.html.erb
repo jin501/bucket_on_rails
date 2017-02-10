@@ -21,7 +21,11 @@
       <button id="add-bucket" class="ui button">Create bucket</button>
 
       <% else%>
-      <a class="ui button" id="follow-button" data-url="/<%= @user.username %>/follow_user">Follow</a>
+        <% if current_user.following.include?(@user) %>
+          <%= render 'buckets/unfollow_button' %>
+        <% else %>
+          <%= render 'buckets/follow_button' %>
+        <% end %>
       <% end %>
     </h1>
   </div>

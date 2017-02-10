@@ -49,10 +49,19 @@ var documentready = function(){
     var url = $(this).data('url')
     console.log(url)
     $.post(url, function(response) {
-      alert('hi')
       html = $.parseHTML( response )
       debugger
       $("#follow-button").replaceWith(html);
+    });
+    event.preventDefault();
+  })
+
+  $('#unfollow-button').click(function(event){
+    var url = $(this).data('url')
+    console.log(url)
+    $.post(url, function(response) {
+      html = $.parseHTML( response )
+      $("#unfollow-button").replaceWith(html);
       console.log(response)
     });
     event.preventDefault();
