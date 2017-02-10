@@ -1,0 +1,47 @@
+#body{
+  background-color: #f2f2ea;
+  margin-top: -39px;
+  /*margin-bottom: 39px;*/
+}
+#main{
+  margin: 40px;
+}
+
+.ui.three.stackable.link.cards{
+  margin: 40px;
+}
+
+.bucket-image{
+  height: 200px !important;
+  width: 100px !important;
+}
+
+#follow-button {
+  text-transform: uppercase;
+  border-color: #4090db !important;
+  color: #4090db;
+  margin-left: 20px;
+  &:visited, &:focus, &:hover {
+    border-color: #2D6396;
+    color: #2D6396;
+  }
+}
+
+.unfollow-button {
+  text-transform: uppercase;
+  border-color: #66bd2b;
+  background-color: #66bd2b;
+  color: white;
+  margin-left: 20px;
+  &:visited, &:focus, &:hover {
+    border-color: #47821F;
+    background-color: #47821F;
+    color: white;
+  }
+}
+/*
+
+
+ */
+
+ @import "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.6/semantic.min.css"
