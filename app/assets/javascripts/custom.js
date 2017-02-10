@@ -2,7 +2,7 @@ var documentready = function(){
 
   $('#follow').on('click', (e)=> {
     e.preventDefault();
-    
+
   })
 
   $('#add-bucket').on('click', () => {
@@ -42,6 +42,22 @@ var documentready = function(){
     })
     event.preventDefault();
   })
+
+
+  // follow and unfollow
+  $('#follow-button').click(function(event){
+    var url = $(this).data('url')
+    console.log(url)
+    $.post(url, function(response) {
+      alert('hi')
+      html = $.parseHTML( response )
+      debugger
+      $("#follow-button").replaceWith(html);
+      console.log(response)
+    });
+    event.preventDefault();
+  })
+
 
 }
 

@@ -13,4 +13,10 @@ Rails.application.routes.draw do
   # get '/users/:username/edit', to: 'users#edit'
   # get '/buckets/:username/:bucket_id/:goal/edit'
 
+  # FollowersController
+  # get 'followers/follow_user'
+  # get 'followers/unfollow_user'
+  post ':username/follow_user', to: 'followers#follow_user', as: :follow_user
+  post ':username/unfollow_user', to: 'followers#unfollow_user', as: :unfollow_user
+
 end

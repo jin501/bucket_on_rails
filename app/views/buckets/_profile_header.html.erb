@@ -21,7 +21,7 @@
       <button id="add-bucket" class="ui button">Create bucket</button>
 
       <% else%>
-      <a class="ui green button">Follow</a>
+      <a class="ui button" id="follow-button" data-url="/<%= @user.username %>/follow_user">Follow</a>
       <% end %>
     </h1>
   </div>
