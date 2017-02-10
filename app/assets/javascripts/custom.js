@@ -50,7 +50,6 @@ var documentready = function(){
     console.log(url)
     $.post(url, function(response) {
       html = $.parseHTML( response )
-      debugger
       $("#follow-button").replaceWith(html);
     });
     event.preventDefault();
