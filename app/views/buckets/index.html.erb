@@ -1,4 +1,5 @@
 <%= render 'buckets/profile_header' %>
+</div>
 
 <% if @buckets == [] %>
   No buckets yet!
@@ -24,7 +25,22 @@
       </div>
     </div>
     <div class="extra content">
-      75 items, 15 completed
+      <% if bucket.goals.count %>
+        <%= bucket.goals.count %> items,
+        <% @count = 0 %>
+        <% bucket.goals.each do |goal| %>
+          <% if goal.completed == true %>
+            <%= @count += 1 %>
+          <% end %>
+        <% end %>
+        <%= @count %> completed <br />
+      <% else %>
+        0 items <br />
+      <% end %>
+
+      <% bucket.tags.each do |tag| %>
+        #<%= tag.tag %>
+      <% end %>
     </div>
   </a>
   <% end %>

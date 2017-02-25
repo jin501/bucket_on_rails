@@ -14,7 +14,7 @@ class BucketsController < ApplicationController
   def index
     @user = User.friendly.find(params[:username])
     @buckets = @user.bukets
-
+    
     # hidden modal create form
     @bucket = Buket.new
     4.times {@bucket.goals.build}
@@ -53,6 +53,7 @@ class BucketsController < ApplicationController
   def show
     @user = User.friendly.find(params[:username].downcase)
     @bucket = Buket.find(params[:bucket_id])
+    @tags = @bucket.tags
     # @bucket.goals.order('created_at DESC')
   end
 

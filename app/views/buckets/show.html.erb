@@ -1,5 +1,9 @@
 show the goals index of specfic bucket
 <%= render 'buckets/profile_header' %>
+<% @tags.each do |tag| %>
+  #<%= tag.tag %>
+<% end %>
+</div>
 
 <div class="container">
   <div class="ui link cards">

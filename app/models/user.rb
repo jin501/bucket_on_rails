@@ -6,12 +6,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable,
          :validatable, :omniauthable, :omniauth_providers => [:facebook, :instagram]
 
+  has_many :follows
 
   has_many :follower_relationships, foreign_key: :following_id, class_name: 'Follow'
   has_many :followers, through: :follower_relationships, source: :follower
 
   has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow'
   has_many :following, through: :following_relationships, source: :following
+
 
   has_many :bukets
   has_many :hastags, through: :bukets
