@@ -1,5 +1,5 @@
 #body{
-  background-color: #f2f2ea;
+  background-color: #e6e6ff;
   margin-top: -39px;
   /*margin-bottom: 39px;*/
 }
@@ -10,21 +10,21 @@
 .ui.three.stackable.link.cards{
   margin: 40px;
 }
+/*#navbar{
+  background-color: #e6e6ff;
+}*/
+.logo{
+  height: 38px;
+  width: 97px !important;
+}
+#footer{
+  margin: 10px;
+  text-align: center;
+}
 
 .bucket-image{
   height: 200px !important;
   width: 100px !important;
-}
-
-#follow-button {
-  text-transform: uppercase;
-  border-color: #4090db !important;
-  color: #4090db;
-  margin-left: 20px;
-  &:visited, &:focus, &:hover {
-    border-color: #2D6396;
-    color: #2D6396;
-  }
 }
 
 .unfollow-button {

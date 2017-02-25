@@ -1,23 +1,28 @@
 <% if current_user %>
-  <%= current_user.username %>
+  Logged in as: <b>@<%= current_user.username %></b>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete)%>
 <% else %>
   <%= link_to('Sign in', new_user_session_path) %>
 <% end %>
 
-<!-- <div class="ui segment"> -->
-  <div class="ui secondary menu">
+  <div class="ui secondary menu" id="navbar">
     <a class="item" href='/'>
-      <img src='http://www.wyklejanietablic.pl/cc/icon_2142.png' />   <i class="ui vertical divider"></i> Bucket
+      <img src='http://www.wyklejanietablic.pl/cc/icon_2142.png' />   <i class="ui vertical divider"></i>
+      <img class="logo" src='/bucket.png' />   <i class="ui vertical divider"></i>
     </a>
+
+    <div class="right float menu">
+
     <div class="ui category search item">
       <div class="ui transparent icon input">
-        <input class="prompt" type="text" placeholder="Search...">
+        <input class="prompt" type="text" placeholder="Search tags..">
           <i class="search link icon"></i>
       </div>
     <div class="results"></div>
     </div>
-<a class="item" href='/explore'>
+  </div>
+<div class="right menu">
+<a class="item" href='/'>
   <img src='/explore.png' />
 </a>
 
