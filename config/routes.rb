@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get '/goals/new', to: 'goals#new'
   get '/users/:username/edit', to: 'users#edit'
+  patch '/users/:username/', to: 'users#update', as: 'user'
   # get '/buckets/:username/:bucket_id/:goal/edit'
 
   # FollowersController

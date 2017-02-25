@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   extend FriendlyId
+  mount_uploaders :avatars, AvatarUploader
   friendly_id :username, use: :slugged
 
   devise :database_authenticatable, :registerable,

@@ -22,6 +22,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-turbolinks'
 gem 'friendly_id', '~> 5.1.0'
 gem 'cocoon'
+gem 'carrierwave', '~> 1.0'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -39,6 +41,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-instagram'
 gem "figaro"
+gem "mini_magick"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

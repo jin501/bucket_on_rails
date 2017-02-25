@@ -1,12 +1,14 @@
 <div class="ui vertical masthead center aligned segment">
   <div class='content'>
     <h1 class="header">
-      Edit avatar here
+      <%= form_for @user do |form| %>
       <img class="ui small circular centered image" src="<%= @user.avatar %>">
+      <h3>Change Profile Picture: <%= form.file_field :avatar %></h3>
       <%= @user.username %><br />
     </h1>
-    <input type='textarea' placeholder="bio"></input>
-
+    <%= form.text_area :bio, value: @user.bio %>
+    <%= form.submit 'Update'%>
+    <% end %>
   </div>
   <h4>
     <%= @user.bukets.count %> buckets | 100 accomplished | <%= @user.followers.count %> followers | <%= @user.following.count %> following
