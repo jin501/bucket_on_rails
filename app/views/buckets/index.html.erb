@@ -25,7 +25,6 @@
       </div>
     </div>
     <div class="extra content">
-      <% if bucket.goals.count %>
         <%= bucket.goals.count %> items,
         <% @count = 0 %>
         <% bucket.goals.each do |goal| %>
@@ -34,10 +33,6 @@
           <% end %>
         <% end %>
         <%= @count %> completed <br />
-      <% else %>
-        0 items <br />
-      <% end %>
-
       <% bucket.tags.each do |tag| %>
         #<%= tag.tag %>
       <% end %>

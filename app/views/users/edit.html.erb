@@ -1,1 +1,52 @@
-hi
+<div class="ui vertical masthead center aligned segment">
+  <div class='content'>
+    <h1 class="header">
+      Edit avatar here
+      <img class="ui small circular centered image" src="<%= @user.avatar %>">
+      <%= @user.username %><br />
+    </h1>
+    <input type='textarea' placeholder="bio"></input>
+
+  </div>
+  <h4>
+    <%= @user.bukets.count %> buckets | 100 accomplished | <%= @user.followers.count %> followers | <%= @user.following.count %> following
+  </h4>
+</div>
+<div class="container">
+<div class="ui link cards">
+  <div class="ui three stackable link cards">
+  <% @user.bukets.each do |bucket| %>
+  <a class="card" href="/buckets/<%= @user.username %>/<%= bucket.id %>">
+    <div class="image">
+      UPLOAD NEW IMAGE HERE
+      <img class="image" src="/bucket.png">
+    </div>
+    <div class="content">
+      <div class="header">
+        <%= bucket.title %>
+      </div>
+      <div class="description">
+        <%= bucket.caption %>
+      </div>
+      <div class="meta">
+        <span class="category"><%= bucket.posted_time %> ago</span>
+      </div>
+    </div>
+    <div class="extra content">
+        <%= bucket.goals.count %> items,
+        <% @count = 0 %>
+        <% bucket.goals.each do |goal| %>
+          <% if goal.completed == true %>
+            <%= @count += 1 %>
+          <% end %>
+        <% end %>
+        <%= @count %> completed <br />
+      <% bucket.tags.each do |tag| %>
+        #<%= tag.tag %>
+      <% end %>
+    </div>
+  </a>
+  <% end %>
+</div>
+</div>
+</div>
