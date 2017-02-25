@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/buckets/:username/:bucket_id/:goal', to: 'goals#show', as: 'goals_show'
 
   get '/goals/new', to: 'goals#new'
-  # get '/users/:username/edit', to: 'users#edit'
+  get '/users/:username/edit', to: 'users#edit'
   # get '/buckets/:username/:bucket_id/:goal/edit'
 
   # FollowersController

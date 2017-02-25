@@ -11,7 +11,7 @@ show the goals index of specfic bucket
       <% @bucket.goals.each do |goal| %>
       <a class="ui card" href='/buckets/<%= @user.slug %>/<%= @bucket.id %>/<%= goal.slug %>'>
         <div class="content">
-          <div class="right floated meta"><%= goal.posted_time %></div>
+          <div class="right floated meta"><%= goal.posted_time %> ago</div>
           <img class="ui avatar image" src="<%= @user.avatar %>"> <%= @user.username %>
         </div>
         <div class="image">

@@ -3,7 +3,7 @@
   <% @buckets.each do |bucket| %>
   <a class="ui card" href="/buckets/<%= bucket.user.username %>/<%= bucket.id %>">
     <div class="content">
-      <div class="right floated meta"><%= bucket.posted_time %></div>
+      <div class="right floated meta"><%= bucket.posted_time %> ago</div>
       <img class="ui avatar image" src="<%= bucket.user.avatar %>">
       <%= bucket.user.username %>
     </div>
@@ -26,11 +26,22 @@
         <%= bucket.caption %>
       </div>
       <div class="meta">
-        <span class="category">Posted 2 days ago</span>
+        <span class="category">
+          <% bucket.tags.each do |tag| %>
+            #<%= tag.tag %>
+          <% end %>
+        </span>
       </div>
     </div>
     <div class="extra content">
-      75 items, 15 completed
+      <%= bucket.goals.count %> items,
+      <% @count = 0 %>
+      <% bucket.goals.each do |goal| %>
+        <% if goal.completed == true %>
+          <%= @count += 1 %>
+        <% end %>
+      <% end %>
+      <%= @count %> completed
     </div>
   </a>
   <% end %>
